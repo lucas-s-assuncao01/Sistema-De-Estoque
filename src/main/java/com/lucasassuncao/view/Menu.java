@@ -99,8 +99,8 @@ public class Menu {
                     String nome = scanner.nextLine();
 
                     System.out.print("Preço: ");
-                    double preco = scanner.nextDouble();
-                    scanner.nextLine();
+                    String precoStr = scanner.nextLine();
+                    double preco = Double.parseDouble(precoStr.replace(",", "."));
 
                     System.out.print("Categoria: ");
                     String cat = scanner.nextLine();

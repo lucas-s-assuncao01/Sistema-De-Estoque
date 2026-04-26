@@ -5,3 +5,4 @@ sabonete2,3.69,higiene1
 desinfetante x,7.99,higiene2
 agua sanitaria,9.55,higiene2
 
+lucas,3.5,alimentos
