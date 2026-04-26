@@ -1,8 +1,7 @@
 santa clara,3.59,alimentos
-nescafe,3.69,alimentos
 sabonete1,2.69,higiene1
 sabonete2,3.69,higiene1
 desinfetante x,7.99,higiene2
 agua sanitaria,9.55,higiene2
-
-lucas,3.5,alimentos
+escova de dente,4.55,higiene1
+colgate,3.44,higiene1

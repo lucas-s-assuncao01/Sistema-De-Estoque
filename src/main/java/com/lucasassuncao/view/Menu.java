@@ -96,7 +96,7 @@ public class Menu {
 
                 case 3:
                     System.out.print("Nome do item: ");
-                    String nome = scanner.nextLine();
+                    String nomeItem = scanner.nextLine();
 
                     System.out.print("Preço: ");
                     String precoStr = scanner.nextLine();
@@ -105,20 +105,27 @@ public class Menu {
                     System.out.print("Categoria: ");
                     String cat = scanner.nextLine();
 
-                    if (banco.itemExiste(nome, cat)) {
+                    if (banco.itemExiste(nomeItem, cat)) {
                         System.out.println("Esse item já existe nessa categoria!");
-                        return;
+                        break;
                     };
 
-                    Item item = new Item(nome, preco);
+                    Item item = new Item(nomeItem, preco);
 
+                    banco.adicionarItemNaMemoria(item, cat);
                     banco.escreverArquivo(item, cat);
 
                     System.out.println("Item adicionado!");
                     break;
 
                 case 4:
-                    adicionarCategoria();
+                    System.out.print("Nome da categoria: ");
+                    String nomeCategoria = scanner.nextLine();
+
+                    Categoria categoria = new Categoria(nomeCategoria);
+
+                    banco.adicionarCategoria(categoria);
+                    System.out.println("Categoria adicionada!");
                     break;
 
                 case 5:

@@ -126,6 +126,13 @@ public class BancoDeDados {
     }
 
     public void adicionarCategoria(Categoria categoria) {
+
+        for (Categoria c : categorias) {
+            if (c.getNome().equalsIgnoreCase(categoria.getNome())) {
+                System.out.println("Categoria já existe!");
+                return;
+            }
+        }
         categorias.add(categoria);
     }
 
@@ -208,5 +215,19 @@ public class BancoDeDados {
         } catch (Exception e) {
             System.out.println("Erro ao salvar arquivo");
         }
+    }
+
+    public void adicionarItemNaMemoria(Item item, String categoriaNome) {
+
+        for (Categoria c : categorias) {
+            if (c.getNome().equalsIgnoreCase(categoriaNome)) {
+                c.adicionarItem(item);
+                return;
+            }
+        }
+
+        Categoria nova = new Categoria(categoriaNome);
+        nova.adicionarItem(item);
+        categorias.add(nova);
     }
 }
